@@ -1,1 +1,7 @@
 language: java
+workflow:
+ - shell: mvn clean
+ - parallel:
+   - mvn clean test
+   - mvn clean test
+ - shell: echo "Hello!"
