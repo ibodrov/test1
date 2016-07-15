@@ -1,4 +1,2 @@
 language: java
-workflow:
- - shell: mvn clean
- - shell: echo "Hello!"
+workflow: test
