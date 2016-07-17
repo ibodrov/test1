@@ -1,2 +1,7 @@
 language: java
-workflow: test
+flows:
+    master:
+        - shell: echo 'Hello world!'
+        - parallel:
+            - shell: echo 'A'
+            - shell: echo 'B'
