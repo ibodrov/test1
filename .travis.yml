@@ -1,7 +1,7 @@
 language: java
 flows:
     master:
-        - shell: echo 'Hello world!'
+        - shell: echo "Hello world!"
         - parallel:
-            - shell: echo 'A'
-            - shell: echo 'B'
+            - shell: echo "A"
+            - shell: echo "B"
