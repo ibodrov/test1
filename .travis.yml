@@ -7,6 +7,16 @@ flows:
             - shell: sleep 5
             - shell: sleep 5
 
+    simple:
+        - parallel
+          - shell: sleep 5
+          - sheel: sleep 5
+
+    nested_call:
+        - parallel:
+          - shell: sleep 5
+          - call: simple
+
     nested:
         - parallel:
           - shell: sleep 5
@@ -25,4 +35,4 @@ flows:
 
     master:
         - shell: echo "Hello world!"
-        - call: nested
+        - call: nested_call
