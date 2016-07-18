@@ -37,7 +37,7 @@ flows:
                 - shell: sleep 5
                 - shell: sleep 5
 
-     example_with_vars:
+    example_with_vars:
         - shell: echo #{hello_string}
 
     master:
