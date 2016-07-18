@@ -2,7 +2,7 @@ language: java
 envs:
     example_env:
         variables:
-            - hello_string: Hello!
+            hello_string: Hello!
 flows:
     reusable_example:
         - shell: echo "Called from the reusable process"
