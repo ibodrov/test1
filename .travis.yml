@@ -10,7 +10,7 @@ flows:
     simple:
         - parallel
           - shell: sleep 5
-          - sheel: sleep 5
+          - shell: sleep 5
 
     nested_call:
         - parallel:
