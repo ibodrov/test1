@@ -1,8 +1,8 @@
 language: java
 envs:
-    example_env:
+    prod_env:
         variables:
-            hello_string: Hello!
+            hello_string: Привет!
 flows:
     reusable_example:
         - shell: echo "Called from the reusable process"
