@@ -25,4 +25,4 @@ flows:
 
     master:
         - shell: echo "Hello world!"
-        - call: deep_nested
+        - call: nested
