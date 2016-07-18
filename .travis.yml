@@ -1,6 +1,6 @@
 language: java
 envs:
-    prod_env:
+    example_env:
         variables:
             hello_string: Привет!
 flows:
@@ -16,11 +16,13 @@ flows:
           - shell: sleep 5
           - shell: sleep 5
 
+    # broken
     nested_call:
         - parallel:
           - shell: sleep 5
           - call: simple
 
+    # broken
     nested:
         - parallel:
           - shell: sleep 5
@@ -28,6 +30,7 @@ flows:
             - shell: sleep 5
             - shell: sleep 5
 
+    # broken
     deep_nested:
         - parallel:
             - shell: sleep 5
@@ -42,4 +45,4 @@ flows:
 
     master:
         - shell: echo "Hello world!"
-        - call: example_with_vars
+        - call: example_with_vars(example_env)
