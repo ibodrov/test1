@@ -1,48 +1,6 @@
-language: java
-envs:
-    example_env:
-        variables:
-            hello_string: Привет!
-flows:
-    reusable_example:
-        - shell: echo "Called from the reusable process"
-        - parallel:
-            - shell: sleep 5
-            - shell: sleep 5
-            - shell: sleep 5
-
-    simple:
-        - parallel:
-          - shell: sleep 5
-          - shell: sleep 5
-
-    # broken
-    nested_call:
-        - parallel:
-          - shell: sleep 5
-          - call: simple
-
-    # broken
-    nested:
-        - parallel:
-          - shell: sleep 5
-          - parallel:
-            - shell: sleep 5
-            - shell: sleep 5
-
-    # broken
-    deep_nested:
-        - parallel:
-            - shell: sleep 5
-            - parallel:
-              - shell: sleep 5
-              - parallel:
-                - shell: sleep 5
-                - shell: sleep 5
-
-    example_with_vars:
-        - shell: echo %{hello_string}
-
-    master:
-        - shell: echo "Hello world!"
-        - call: example_with_vars(example_env)
+language: "java"
+jdk:
+- "1.8.0_91-b14"
+maven: "3.3.9"
+script:
+- "mvn clean install -s ci_settings.xml"
