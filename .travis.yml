@@ -1,4 +1,7 @@
 language: java
+envs:
+    example_env:
+        - hello_string: Hello!
 flows:
     reusable_example:
         - shell: echo "Called from the reusable process"
@@ -33,6 +36,9 @@ flows:
                 - shell: sleep 5
                 - shell: sleep 5
 
+     example_with_vars:
+        - shell: echo #{hello_string}
+
     master:
         - shell: echo "Hello world!"
-        - call: nested_call
+        - call: example_with_vars
