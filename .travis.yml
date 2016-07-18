@@ -3,12 +3,12 @@ flows:
     reusable_example:
         - shell: echo "Called from the reusable process"
         - parallel:
-            - shell: echo "123"
-            - shell: echo "234"
-            - shell: echo "456"
+            - shell: sleep 5000 
+            - shell: sleep 5000
+            - shell: sleep 5000
     master:
         - shell: echo "Hello world!"
         - parallel:
-            - shell: echo "A"
-            - shell: echo "B"
+            - shell: sleep 5000
+            - shell: sleep 5000
         - call: reusable_example
