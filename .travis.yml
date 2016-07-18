@@ -1,6 +1,6 @@
 language: java
 envs:
-    - example_env:
+    example_env:
         variables:
             - hello_string: Hello!
 flows:
