@@ -8,7 +8,7 @@ flows:
             - shell: sleep 5
 
     simple:
-        - parallel
+        - parallel:
           - shell: sleep 5
           - shell: sleep 5
 
