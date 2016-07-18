@@ -6,9 +6,16 @@ flows:
             - shell: sleep 5
             - shell: sleep 5
             - shell: sleep 5
-    master:
-        - shell: echo "Hello world!"
+
+    deep_nested:
         - parallel:
             - shell: sleep 5
-            - shell: sleep 5
-        - call: reusable_example
+            - parallel:
+              - shell: sleep 5
+              - parallel:
+                - shell: sleep 5
+                - shell: sleep 5
+
+    master:
+        - shell: echo "Hello world!"
+        - call: deep_nested
