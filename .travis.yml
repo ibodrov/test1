@@ -45,3 +45,6 @@ flows:
 
     master:
         - shell: echo "Hello world!"
+
+    pr:
+        - shell: echo "123!"
