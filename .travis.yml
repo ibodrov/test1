@@ -44,4 +44,4 @@ flows:
         - shell: echo %{hello_string}
 
     master:
-        - shell: echo "Hello world!"
+        - shell: echo "Hello cruel world!"
