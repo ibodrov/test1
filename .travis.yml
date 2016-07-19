@@ -45,4 +45,3 @@ flows:
 
     master:
         - shell: echo "Hello world!"
-        - call: nested_call
