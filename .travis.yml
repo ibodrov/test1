@@ -47,11 +47,11 @@ flows:
         - node: slave1
         - shell: uname -a
         - shell: pwd
-        - shell: ls -lah
+        - shell: ls -lah workspace
         - node: slave2
         - shell: uname -a
         - shell: pwd
-        - shell: ls -lah
+        - shell: ls -lah workspace
         
     master:
         - call: node_pinning_example
