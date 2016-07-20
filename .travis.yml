@@ -43,8 +43,16 @@ flows:
     example_with_vars:
         - shell: echo %{hello_string}
 
+    node_pinning_example:
+        - node: slave1
+        - shell: pwd
+        - shell: ls -lah
+        - node: slave2
+        - shell: pwd
+        - shell: ls -lah
+        
     master:
-        - shell: echo "Hello world!"
-
+        - call: node_pinning_example
+      
     pr:
-        - shell: echo "123!"
+        - shell: echo "Hello PR!"
