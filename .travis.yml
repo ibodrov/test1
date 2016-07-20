@@ -45,9 +45,11 @@ flows:
 
     node_pinning_example:
         - node: slave1
+        - shell: uname -a
         - shell: pwd
         - shell: ls -lah
         - node: slave2
+        - shell: uname -a
         - shell: pwd
         - shell: ls -lah
         
