@@ -3,6 +3,9 @@ envs:
     example_env:
         variables:
             hello_string: Привет!
+    example_env2:
+        variables:
+            hello_string: master
 flows:
     reusable_example:
         - shell: echo "Called from the reusable process"
@@ -54,7 +57,7 @@ flows:
         - shell: ls -lah workspace
 
     job_call_example:
-        - job: bpm(example_env)
+        - job: bpm(example_env2)
         
     master:
         - call: job_call_example
