@@ -52,9 +52,12 @@ flows:
         - shell: uname -a
         - shell: pwd
         - shell: ls -lah workspace
+
+    job_call_example:
+        - job: bpm(example_env)
         
     master:
-        - call: node_pinning_example
+        - call: job_call_example
       
     pr:
         - shell: echo "Hello PR!"
