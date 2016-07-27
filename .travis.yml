@@ -1,66 +1,8 @@
 language: java
-envs:
-    example_env:
-        variables:
-            hello_string: Привет!
-    example_env2:
-        variables:
-            hello_string: master
 flows:
-    reusable_example:
-        - shell: echo "Called from the reusable process"
-        - parallel:
-            - shell: sleep 5
-            - shell: sleep 5
-            - shell: sleep 5
-
-    simple:
-        - parallel:
-          - shell: sleep 5
-          - shell: sleep 5
-
-    # broken
-    nested_call:
-        - parallel:
-          - shell: sleep 5
-          - call: simple
-
-    # broken
-    nested:
-        - parallel:
-          - shell: sleep 5
-          - parallel:
-            - shell: sleep 5
-            - shell: sleep 5
-
-    # broken
-    deep_nested:
-        - parallel:
-            - shell: sleep 5
-            - parallel:
-              - shell: sleep 5
-              - parallel:
-                - shell: sleep 5
-                - shell: sleep 5
-
-    example_with_vars:
-        - shell: echo %{hello_string}
-
-    node_pinning_example:
-        - node: slave1
-        - shell: uname -a
-        - shell: pwd
-        - shell: ls -lah workspace
-        - node: slave2
-        - shell: uname -a
-        - shell: pwd
-        - shell: ls -lah workspace
-
-    job_call_example:
-        - job: bpm(example_env2)
-        
     master:
-        - call: job_call_example
-      
-    pr:
-        - shell: echo "Hello PR!"
+      - node: slave1
+      - shell: uname -a > myfile.txt
+      - workspace_sync: true
+      - node: slave2
+      - shell: cat myfile.txt
