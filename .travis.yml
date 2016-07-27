@@ -2,7 +2,4 @@ language: java
 flows:
     master:
       - node: slave1
-      - shell: uname -a > myfile.txt
-      - workspace_sync: true
-      - node: slave2
-      - shell: cat myfile.txt
+      - shell: env 
