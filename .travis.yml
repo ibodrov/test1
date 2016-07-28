@@ -4,4 +4,5 @@ flows:
       - node: slave1
       - shell: echo "Hello!" > myfile.txt
       - node: slave2
+      - workspace_sync: true
       - shell: cat myfile.txt
